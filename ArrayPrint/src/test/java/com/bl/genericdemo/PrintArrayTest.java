@@ -20,5 +20,11 @@ public class PrintArrayTest {
         Assert.assertTrue(printArray.toPrint(arrDouble));
         Assert.assertTrue(printArray.toPrint(arrChar));
     }
-    
+
+    @Test
+    public void  givenArrayToConstructor_ShouldPrintArray(){
+        Assert.assertTrue(new PrintArray<Integer>(arrInt).toPrint());
+        Assert.assertTrue(new PrintArray<Double>(arrDouble).toPrint());
+        Assert.assertTrue(new PrintArray<Character>(arrChar).toPrint());
+    }
 }

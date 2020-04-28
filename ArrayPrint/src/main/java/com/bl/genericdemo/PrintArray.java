@@ -1,10 +1,15 @@
 package com.bl.genericdemo;
 
-public class PrintArray {
+public class PrintArray <T> {
+    T[] myArray;
 
     public PrintArray(){ }
 
-    public static boolean toPrint(Integer [] arr)
+    public PrintArray(T [] myArray){
+        this.myArray=myArray;
+    }
+
+    /*public static boolean toPrint(Integer [] arr)
     {
         for(Integer i: arr)
             System.out.println(i);
@@ -21,6 +26,15 @@ public class PrintArray {
         for(Character i: arr)
             System.out.println(i);
          return true;
+    }*/
+    public static <T> boolean toPrint(T [] arr)
+    {
+        for(T i: arr)
+            System.out.println(i);
+       return true;
     }
-
+    public boolean toPrint()
+    {
+        return toPrint(myArray);
+    }
 }
